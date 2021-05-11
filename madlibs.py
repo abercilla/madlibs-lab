@@ -33,6 +33,7 @@ def say_hello():
 def greet_person():
     """Greet user with compliment."""
 
+    #we GET this info from what was inputted on the /hello.html page
     player = request.args.get("person")
 
     compliment = choice(AWESOMENESS)
@@ -51,12 +52,26 @@ def show_madlib_form():
 
     #make sure name  matches the radio button in compliments form
     willplay = request.args.get("willplay")
-    print(f"willplay = {willplay}")
 
-    # if willplay == "no":
-    #     return render_template("goodbye.html", value = "no")
-    # else:
-    #     return render_template("game.html")
+    if willplay == "no":
+        return render_template("goodbye.html")
+    else:
+        return render_template("game.html")
+
+@app.route('/madlib')
+def show_madlib():
+    """Fill madlib template with user's input"""
+
+    #GET inputs from the game.html page and assign to variable
+    name = request.args.get("name")
+    color = request.args.get("color")
+    noun = request.args.get("noun")
+    adjective = request.args.get("adjective")
+    
+    #get the madlib.html page, and assign the variables we created above
+    # ...to the names of the user's input in game.html
+    return render_template("madlib.html",name=name,color=color,noun=noun,adjective=adjective)
+
 
 
 

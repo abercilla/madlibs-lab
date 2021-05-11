@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <title>Let's play Madlibs!</title>
+</head>
+<body>
+    Hi {{ person }}!
+    <form action="/madlib">
+    <!--ask user to type in a name-->
+    <p> <label>Enter a person's name:</label>
+      <input type="text" name="name">
+    </p> 
+
+ <!--ask user to choose color from dropdown-->
+       <p> <label>Enter a color:</label>
+
+        <select name="color">
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+            <option value="purple">purple</option>
+            <option value="yellow">yellow</option>
+            </select>
+        </p>
+
+    <!--ask user to type in a noun-->
+    <p>
+    <label>Enter a noun:</label>  
+    <input type="text" name="noun">
+    </p>
+    
+    <!--ask user to type in an adjective-->
+    <p>
+    <label>Enter an adjective:</label>
+    <input type="text" name="adjective">
+    </p>    
+
+    <p><input type="submit">
+    </p>
+    </form>
+</body>
+</html>
